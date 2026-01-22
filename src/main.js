@@ -1,7 +1,9 @@
 import kaplay from "kaplay"
 import "kaplay/global"
 
-kaplay()
+kaplay({
+  debugKey: "d"
+})
 
 loadRoot("./") // A good idea for Itch.io publishing later
 loadSprite("bean", "sprites/bean.png")
