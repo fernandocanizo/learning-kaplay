@@ -52,7 +52,19 @@ scene("game", () => {
   player.onCollide("tree", () => {
     addKaboom(player.pos)
     shake()
+    wait(0.5, () => {
+      go("gameOver")
+    })
   })
+})
+
+scene("gameOver", () => {
+  add([
+    text("Game Over"),
+    pos(center()),
+    anchor("center"),
+    color(255, 0, 0),
+  ])
 })
 
 go("game")
