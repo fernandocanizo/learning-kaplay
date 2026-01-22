@@ -8,10 +8,9 @@ kaplay({
 loadRoot("./") // A good idea for Itch.io publishing later
 loadSprite("bean", "sprites/bean.png")
 
-let score = 0
-
 scene("game", () => {
   setGravity(1600)
+  let score = 0
 
   const player = add([sprite("bean"), pos(30, 600), area(), body()])
 
@@ -61,7 +60,7 @@ scene("game", () => {
     addKaboom(player.pos)
     shake()
     wait(0.5, () => {
-      go("gameOver")
+      go("gameOver", score)
     })
   })
 
