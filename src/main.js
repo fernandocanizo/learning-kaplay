@@ -22,5 +22,7 @@ add([
 onClick(() => addKaboom(mousePos()))
 
 onKeyPress("space", () => {
-  player.jump()
+  if (player.isGrounded()) {
+    player.jump()
+  }
 })
