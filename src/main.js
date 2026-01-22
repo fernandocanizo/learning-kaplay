@@ -9,7 +9,8 @@ loadSprite("bean", "sprites/bean.png")
 setGravity(1600)
 
 const player = add([sprite("bean"), pos(30, 600), area(), body()])
-add([ // platform
+add([
+  // platform
   rect(width(), 48),
   pos(0, height() - 48),
   outline(4),
@@ -21,5 +22,5 @@ add([ // platform
 onClick(() => addKaboom(mousePos()))
 
 onKeyPress("space", () => {
-    player.jump()
+  player.jump()
 })
