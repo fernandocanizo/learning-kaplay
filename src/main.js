@@ -8,6 +8,18 @@ kaplay({
 loadRoot("./") // A good idea for Itch.io publishing later
 loadSprite("bean", "sprites/bean.png")
 
+scene("home", () => {
+  add([
+    text("Press ENTER to play"),
+    pos(center()),
+    anchor("center"),
+    scale(2),
+    color(0, 0, 255),
+  ])
+
+  onKeyPress("enter", () => go("game"))
+})
+
 scene("game", () => {
   setGravity(1600)
   let score = 0
@@ -86,6 +98,8 @@ scene("gameOver", (score) => {
     anchor("center"),
     color(255, 0, 0),
   ])
+
+  onKeyPress("enter", () => go("game"))
 })
 
-go("game")
+go("home")
