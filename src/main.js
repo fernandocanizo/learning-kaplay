@@ -32,10 +32,13 @@ add([
   move(LEFT, 480),
 ])
 
-onClick(() => addKaboom(mousePos()))
-
 onKeyPress("space", () => {
   if (player.isGrounded()) {
     player.jump()
   }
+})
+
+player.onCollide("tree", () => {
+  addKaboom(player.pos)
+  shake()
 })
