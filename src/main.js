@@ -20,7 +20,8 @@ add([
   color(127, 200, 255),
 ])
 
-add([ // tree
+add([
+  "tree",
   rect(48, 64),
   area(),
   body({ isStatic: true }),
