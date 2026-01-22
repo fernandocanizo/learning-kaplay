@@ -22,17 +22,22 @@ add([
   color(127, 200, 255),
 ])
 
-add([
-  "tree",
-  rect(48, 64),
-  area(),
-  body({ isStatic: true }),
-  outline(4),
-  pos(width(), height() - 48),
-  anchor("botleft"),
-  color(255, 180, 255),
-  move(LEFT, 480),
-])
+loop(1, () => {
+  const h = [30, 60, 90]
+  const index = Math.floor(Math.random() * h.length)
+
+  add([
+    "tree",
+    rect(48, h[index]),
+    area(),
+    body({ isStatic: true }),
+    outline(4),
+    pos(width(), height() - 48),
+    anchor("botleft"),
+    color(255, 180, 255),
+    move(LEFT, 480),
+  ])
+})
 
 onKeyPress("space", () => {
   if (player.isGrounded()) {
