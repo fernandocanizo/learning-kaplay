@@ -8,6 +8,7 @@
 		"zip": "pnpm run build && mkdir -p dist && zip -r dist/game.zip dist -x \"**/.DS_Store\""
 	},
 	"dependencies": {
+		"@biomejs/biome": "^2.3.11",
 		"kaplay": "4000.0.0-alpha.26"
 	},
 	"devDependencies": {
