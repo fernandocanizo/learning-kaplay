@@ -70,17 +70,20 @@ scene("game", () => {
   })
 })
 
-scene("gameOver", () => {
+scene("gameOver", (score) => {
   add([
     text("Game Over"),
     pos(center()),
+    scale(2),
     anchor("center"),
     color(255, 0, 0),
   ])
 
   add([
     text(`Final score: ${score}`),
-    pos(width() - 400, 24),
+    pos(width() / 2, height() / 2 + 80),
+    scale(2),
+    anchor("center"),
     color(255, 0, 0),
   ])
 })
