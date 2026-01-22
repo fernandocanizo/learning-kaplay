@@ -1,15 +1,15 @@
 import kaplay from "kaplay"
-// import "kaplay/global"; // uncomment if you want to use without the k. prefix
+import "kaplay/global"
 
-const k = kaplay()
+kaplay()
 
-loadRoot("./"); // A good idea for Itch.io publishing later
+loadRoot("./") // A good idea for Itch.io publishing later
 loadSprite("bean", "sprites/bean.png")
 
-k.setGravity(1600)
+setGravity(1600)
 
 const player = add([sprite("bean"), pos(30, 600), area(), body()])
-const platform = add([
+add([ // platform
   rect(width(), 48),
   pos(0, height() - 48),
   outline(4),
