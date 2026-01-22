@@ -23,12 +23,9 @@ add([
 ])
 
 loop(1, () => {
-  const h = [30, 60, 90]
-  const index = Math.floor(Math.random() * h.length)
-
   add([
     "tree",
-    rect(48, h[index]),
+    rect(48, rand(30, 90)),
     area(),
     body({ isStatic: true }),
     outline(4),
