@@ -9,6 +9,14 @@ loadSprite("bean", "sprites/bean.png")
 k.setGravity(1600)
 
 const player = add([sprite("bean"), pos(30, 600), area(), body()])
+const platform = add([
+  rect(width(), 48),
+  pos(0, height() - 48),
+  outline(4),
+  area(),
+  body({ isStatic: true }),
+  color(127, 200, 255),
+])
 
 onClick(() => addKaboom(mousePos()))
 
