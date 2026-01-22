@@ -8,6 +8,8 @@ kaplay({
 loadRoot("./") // A good idea for Itch.io publishing later
 loadSprite("bean", "sprites/bean.png")
 
+let score = 0
+
 scene("game", () => {
   setGravity(1600)
 
@@ -21,6 +23,12 @@ scene("game", () => {
     area(),
     body({ isStatic: true }),
     color(127, 200, 255),
+  ])
+
+  const scoreLabel = add([
+    text(`Score: ${score}`),
+    pos(width() - 400, 24),
+    color(255, 0, 0),
   ])
 
   const spawnTree = () => {
@@ -56,6 +64,11 @@ scene("game", () => {
       go("gameOver")
     })
   })
+
+  onUpdate(() => {
+    score += 1
+    scoreLabel.text = score
+  })
 })
 
 scene("gameOver", () => {
@@ -63,6 +76,12 @@ scene("gameOver", () => {
     text("Game Over"),
     pos(center()),
     anchor("center"),
+    color(255, 0, 0),
+  ])
+
+  add([
+    text(`Final score: ${score}`),
+    pos(width() - 400, 24),
     color(255, 0, 0),
   ])
 })
