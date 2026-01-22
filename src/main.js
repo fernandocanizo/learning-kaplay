@@ -22,7 +22,7 @@ add([
   color(127, 200, 255),
 ])
 
-loop(1, () => {
+const spawnTree = () => {
   add([
     "tree",
     rect(48, rand(30, 90)),
@@ -34,7 +34,13 @@ loop(1, () => {
     color(255, 180, 255),
     move(LEFT, 480),
   ])
-})
+
+  wait(rand(0.5, 1.5), () => {
+    spawnTree()
+  })
+}
+
+spawnTree()
 
 onKeyPress("space", () => {
   if (player.isGrounded()) {
