@@ -6,10 +6,11 @@
 		"dev": "vite",
 		"preview": "vite preview",
 		"zip": "pnpm run build && mkdir -p dist && zip -r dist/game.zip dist -x \"**/.DS_Store\"",
-    "check:format": "biome format",
-    "check:lint": "biome lint --max-diagnostics 1000",
-    "listFilesWithErrors": "biome lint --diagnostic-level=error --max-diagnostics=none --reporter=github | sed -n 's/.*file=\\([^,]*\\).*/\\1/p' | sort -u",
-    "fixall": "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off"
+		"check:types": "tsc --noEmit",
+		"check:format": "biome format",
+		"check:lint": "biome lint --max-diagnostics 1000",
+		"listFilesWithErrors": "biome lint --diagnostic-level=error --max-diagnostics=none --reporter=github | sed -n 's/.*file=\\([^,]*\\).*/\\1/p' | sort -u",
+		"fixall": "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^2.3.11",
@@ -17,6 +18,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^25.0.10",
+		"typescript": "^5.9.3",
 		"vite": "^7.3.1"
 	}
 }

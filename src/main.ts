@@ -78,11 +78,11 @@ scene("game", () => {
 
   onUpdate(() => {
     score += 1
-    scoreLabel.text = score
+    scoreLabel.text = String(score)
   })
 })
 
-scene("gameOver", (score) => {
+scene("gameOver", (score: number) => {
   add([
     text("Game Over"),
     pos(center()),
